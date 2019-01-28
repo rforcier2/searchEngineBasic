@@ -1,2 +1,3 @@
 # searchEngineBasic
-creating very basic search engine to crawl the web.
+Creating very basic search engine to crawl the web.
+ - Created using Python.
