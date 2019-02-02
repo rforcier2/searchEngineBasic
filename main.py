@@ -1,5 +1,5 @@
 # Python 3.0 
-# Basic search engine 
+# Basic Page Link Extractor:
 
 # get_page function will retrieve the page we want and return the contents.
 def get_page(web_link):
