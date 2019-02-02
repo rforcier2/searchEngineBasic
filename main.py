@@ -1,23 +1,19 @@
 # Python 3.0 
 # Basic search engine 
 
-# This will stand in as a valid "webpage" to search:
-page = '''
-<div id="top_bin"> 
-  <div id="top_content" class="width960">
-    <div class="udacity float-left">
-    <a href="http://udacity.com">Udacity</a>
-    <a href="http://youtube.com">youtube</a>
-    <a href="http://codepen.io">Codepen</a>
-    <a href="http://starlimeweb.com">starlime</a> 
-     '''
+# get_page function will retrieve the page we want and return the contents.
+def get_page(web_link):
+  from urllib.request import urlopen
+  web_page = urlopen(web_link)
+  web_page_text = web_page.read()
+  page = web_page_text.decode('UTF-8')
+  return page
 
 # get_next_link function will find the next link
 #  unless there are no links, in which case we want to return: None, 0 (aka false)
-
-# First we find the beginning quote and end quote of the link
-#  return the contents of the url and the position of the last 
-#  quote we checked, so we don't go over it again.
+#  We find the beginning quote & end quote of the link,
+#  return the contents of the url, and the position of the last 
+#  quote we checked so that we don't go over it again.
 
 def get_next_link(page_string):
   start_link = page_string.find("<a href=")
@@ -39,7 +35,8 @@ def print_all_links(valid_page):
       valid_page = valid_page[endpos:]
     else: 
       break
-
-print_all_links(page)
+      
+# now we choose the link for get_page function:
+print_all_links( get_page('https://en.wikipedia.org/wiki/Main_Page') )
 
 
