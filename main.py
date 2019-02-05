@@ -25,8 +25,8 @@ def get_next_link(page_string):
   return url, end_quote
 
 
-# This function will retrieve all links, while there
-#  is a next link, and print all of them to the console.
+# This function uses our previous get_next_link function to 
+# print all links on the page
 def print_all_links(valid_page):
   while valid_page:
     url, endpos = get_next_link(valid_page)  
