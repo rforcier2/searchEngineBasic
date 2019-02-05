@@ -1,3 +1,5 @@
 # searchEngineBasic
 Creating very basic search engine to crawl the web and return links.
- - Created using Python.
+
+## Current Functionality:
+ - Grab links from target site of your choice
